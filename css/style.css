@@ -1,0 +1,261 @@
+/* PERSONAL PORTFOLIO */
+/* DEVELOPED BY SAMIULHAQ CHARDIWALL */
+/* STARTED DATE: 10-JAN-2023 */
+
+/* INDEX.CSS  --HOME PAGE STYLE--  */
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+:root{
+    /* setting variables */
+
+    /* color and themes */
+    --bg-black-900: #f2f2fc;
+    --bg-black-100: #fdf9ff;
+    --bg-black-50: #e8dfec;
+    --text-black-900: #302e4d;
+    --text-black-700: #504e70;
+
+    --continer-color: #fff;
+
+    /* Fonts and Typography */
+    --body-font: "Righteous", sans-serif;
+
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: . 813rem;
+    --smaller-font-size: .75rem;
+
+
+    /* font weight */
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+
+    /* margins */
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-3: 3rem;
+
+
+    /* z index */
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+
+    /* Font size for Large devices */
+    @media screen and (min-width: 968px) {
+        :root{
+            --big-font-size: 3rem;
+            --h1-font-size: 2.25rem;
+            --h2-font-size: 1.5rem;
+            --h3-font-size: 1.25rem;
+            --normal-font-size: .875rem
+            --small-font-size: .875rem;
+            --smaller-font-size: 813rem;
+        }
+    }
+
+
+    --animate-duration: 2s;
+
+
+}
+
+/* style for every element (universal selector) */
+*{
+    outline: none;
+    text-decoration: none;
+    font-family: var(--body-font);
+}
+
+*, ::after, ::before{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+/* PRELOADER */
+#pre-loader-bg{
+    position: absolute;
+    background-image: url("../Thumbnail/loading-page-background.jpg");
+    background-position: initial;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    filter: brightness(40%) blur(10px);
+    overflow: hidden;
+
+    margin: 0 auto;
+}
+
+/* animation */
+#anime-ctr{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+#anime{
+    width: 200px;
+    
+}
+
+/* home page style */
+#home-page{
+    width: 100vw;
+    height: 100vh;
+}
+
+
+/* =========================== side menu ================================ */
+.side-menu{
+    width: 270px;
+    background-color: var(--bg-black-100);
+    position: fixed;
+    left: 0;
+    top: 0;
+    border-right: 1px solid var(--skin-color);
+
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    z-index: var(--z-tooltip );
+
+}
+
+/* side menue toggle */
+.side-menu .nav-toggler {
+    height: 40px;
+    width: 45px;
+    border: 1px solid var(--bg-black-50);
+    cursor: pointer;
+    position: fixed;
+    left: 300px;
+    top: 20px;
+    border-radius: 5px;
+    background-color: var(--bg-black-100);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-menu .nav-toggler span {
+    height: 2px;
+    width: 18px;
+    background-color: var(--skin-color);
+    display: inline-block;
+    position: relative;
+}
+.side-menu .nav-toggler span::before {
+    content: '';
+    height: 2px;
+    width: 18px;
+    background-color: var(--skin-color);
+    position: absolute;
+    top: -6px;
+    left: 0;
+}
+
+.side-menu .nav-toggler span::after {
+    content: '';
+    height: 2px;
+    width: 18px;
+    background-color: var(--skin-color);
+    position: absolute;
+    top: 6px;
+    left: 0;
+}
+
+/* navbar style */
+ul{
+    list-style: none;
+}
+
+li .fa{
+    margin-right: 10px;
+}
+
+.side-menu .nav{
+    margin-top: 50px;
+}
+
+.side-menu .nav li{
+    margin-bottom: 20px;
+    display: block;
+}
+
+.side-menu .nav li a {
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    border-bottom: 1px solid var(--bg-black-50);
+    color: var(--text-black-900);
+    padding: 5px 15px;
+}
+.side-menu .nav li .active{
+    color: var(--skin-color);
+}
+
+/* logo style*/
+.side-menu .logo{
+    position: absolute;
+    top: 50px;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.side-menu .logo a::before{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 25px;
+    border-bottom: 7px solid var(--skin-color);
+    border-left: 5px solid var(--skin-color);
+    bottom: -15px;
+    left: -20px;
+
+}
+.side-menu .logo a::after{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 25px;
+    border-top: 6px solid var(--skin-color);
+    border-right: 5px solid var(--skin-color);
+    top: -15px;
+    right: -20px;
+
+}
+
+/* =========================== Home menu ================================ */
+.main-content{
+    background-color: var(--bg-black-900);
+    min-height: 100vh;
+    display: block;
+    position: fixed ;
+    left: 270px;
+    top: 0;
+    right: 0;
+    opacity: 1;
+    z-index: 0;
+}
