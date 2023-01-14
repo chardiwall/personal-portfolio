@@ -239,6 +239,10 @@ li .fa{
 
 }
 
+
+.shadow{
+    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+}
 /* =========================== Home section ================================ */
 .section{
     background-color: var(--bg-black-900);
@@ -398,4 +402,96 @@ a.btn{
     background-color: rgb(var(--skin-color));
     top: 70px;
     left: 16px;
+}
+
+.about .personal-info{
+    flex: 0 0 60%;
+    width: 60%;
+    margin-top: 40px;
+}
+
+.about .personal-info .info-item{
+    flex: 0 0 50%;
+    max-width: 50% ;
+}
+
+.about .personal-info  .info-item p{
+    font-weight: 600;
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--text-black-900);
+    border-bottom: 1px solid var(--bg-black-50);
+}
+
+.about .personal-info  .info-item p span{
+    font-weight: 400;
+    color: var(--text-black-700);
+}
+
+.about .skills{
+    flex: 0 0 40%;
+    width: 40%;
+    margin-top: 40px ;
+}
+
+.about .education, .about .experience{
+    flex: 0 0 50%;
+    width: 50%;
+    margin-top: 30px ;
+}
+
+.about .education h2.title,
+.about .experience h2.title{
+    padding-left: 15px;
+}
+
+.about .timeline-box{
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+.about .timeline{
+    background-color: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    border-radius: 15px;
+    width: 100%;
+    position: relative;
+}
+.about .timeline .timeline-item{
+    position: relative;
+    padding-right: 20px;
+    padding-left: 37px;
+    padding-bottom: 30px;  
+}
+
+.about .timeline .timeline-item::before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 77%;
+    left: 17px;
+    top: 15px;
+    background-color: rgb(var(--skin-color));
+}
+
+.about .timeline .circle{
+    position: absolute;
+    left: 8px;
+    top: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(var(--skin-color));
+}
+
+.about .timeline .timeline-item .date{
+    color: var(--text-black-700);
+}
+
+.about .timeline-item p{
+    text-align: justify;
+}
+
+.about .title{
+    font-size: var(--h2-font-size);
 }
