@@ -4,11 +4,13 @@
 
 /* INDEX.CSS  --HOME PAGE STYLE--  */
 
+/* ---------- importing external fonts ---------- */
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
-:root{
-    /* setting variables */
 
+/* ============================== setting variables ======================== */
+
+:root{
     /* color and themes */
     --bg-black-900: #f2f2fc;
     --bg-black-100: #fdf9ff;
@@ -16,10 +18,9 @@
     --text-black-900: #302e4d;
     --text-black-700: #504e70;
 
-    --continer-color: #fff;
-
     /* Fonts and Typography */
-    --body-font: "Righteous", sans-serif;
+    --header-font: 'Righteous', cursive;
+
 
     --big-font-size: 2rem;
     --h1-font-size: 1.5rem;
@@ -28,225 +29,43 @@
     --normal-font-size: .938rem;
     --small-font-size: . 813rem;
     --smaller-font-size: .75rem;
-
-
-    /* font weight */
-    --font-medium: 500;
-    --font-semi-bold: 600;
-
-
-    /* margins */
-    --mb-0-25: .25rem;
-    --mb-0-5: .5rem;
-    --mb-0-75: .75rem;
-    --mb-1: 1rem;
-    --mb-1-5: 1.5rem;
-    --mb-2: 2rem;
-    --mb-3: 3rem;
-
-
-    /* z index */
-    --z-tooltip: 10;
-    --z-fixed: 100;
-    --z-modal: 1000;
-
-    /* Font size for Large devices */
-    @media screen and (min-width: 968px) {
-        :root{
-            --big-font-size: 3rem;
-            --h1-font-size: 2.25rem;
-            --h2-font-size: 1.5rem;
-            --h3-font-size: 1.25rem;
-            --normal-font-size: .875rem
-            --small-font-size: .875rem;
-            --smaller-font-size: 813rem;
-        }
-    }
-
-
-    --animate-duration: 2s;
-
-
 }
 
-/* style for every element (universal selector) */
+/*  ------------ inverting colors for dark display (dark theme) ---------- */
+body.dark{
+        /* color and themes */
+        --bg-black-900: #151515;
+        --bg-black-100: #222222;
+        --bg-black-50: #393939;
+        
+        --text-black-900: #fff;
+        --text-black-700: #e9e9e9;
+        --continer-color: #fff;
+}
+
+/* --------- style for every element (universal selector) -----------*/
 *{
     outline: none;
     text-decoration: none;
-    font-family: var(--body-font);
 }
 
 *, ::after, ::before{
     box-sizing: border-box;
 }
 
+/* =============================== general styling ============================ */
+
 html{
     scroll-behavior: smooth;
+    font-family: var(--header-font);
 }
-
-
-/* PRELOADER */
-#pre-loader-bg{
-    position: absolute;
-    background-image: url("../Thumbnail/loading-page-background.jpg");
-    background-position: initial;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-    filter: brightness(40%) blur(10px);
-
-    margin: 0 auto;
-}
-
-/* animation */
-#anime-ctr{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    width: 100vw;
-    height: 100vh;
-    
-}
-
-#anime{
-    width: 200px;
-    
-}
-
-/* =========================== side menu ================================ */
-.side-menu{
-    width: 270px;
-    background-color: var(--bg-black-100);
-    position: fixed;
-    left: 0;
-    top: 0;
-    border-right: 1px solid rgb(rgb(var(--skin-color)));
-
-    height: 100%;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-
-    z-index: var(--z-tooltip );
-
-}
-
-/* side menue toggle */
-.side-menu .nav-toggler {
-    height: 40px;
-    width: 45px;
-    border: 1px solid var(--bg-black-50);
-    cursor: pointer;
-    position: fixed;
-    left: 300px;
-    top: 20px;
-    border-radius: 5px;
-    background-color: var(--bg-black-100);
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-.side-menu .nav-toggler span {
-    height: 2px;
-    width: 18px;
-    background-color: rgb(var(--skin-color));
-    display: inline-block;
-    position: relative;
-}
-.side-menu .nav-toggler span::before {
-    content: '';
-    height: 2px;
-    width: 18px;
-    background-color: rgb(var(--skin-color));
-    position: absolute;
-    top: -6px;
-    left: 0;
-}
-
-.side-menu .nav-toggler span::after {
-    content: '';
-    height: 2px;
-    width: 18px;
-    background-color: rgb(var(--skin-color));
-    position: absolute;
-    top: 6px;
-    left: 0;
-}
-
-/* navbar style */
-ul{
-    list-style: none;
-}
-
-li .fa{
-    margin-right: 10px;
-}
-
-.side-menu .nav{
-    margin-top: 50px;
-}
-
-.side-menu .nav li{
-    margin-bottom: 20px;
-    display: block;
-}
-
-.side-menu .nav li a {
-    font-size: 18px;
-    font-weight: 600;
-    display: block;
-    border-bottom: 1px solid var(--bg-black-50);
-    color: var(--text-black-900);
-    padding: 5px 15px;
-}
-.side-menu .nav li .active{
-    color: rgb(var(--skin-color));
-}
-
-/* logo style*/
-.side-menu .logo{
-    position: absolute;
-    top: 50px;
-    font-size: 30px;
-    text-transform: uppercase;
-}
-
-.side-menu .logo a::before{
-    content: "";
-    position: absolute;
-    width: 50%;
-    height: 40px;
-    border-bottom-left-radius: 100%;
-    border-bottom: 10px solid rgb(var(--skin-color));
-    border-left: 1px solid rgb(var(--skin-color));
-    bottom: -25px;
-    left: -20px;
-
-}
-.side-menu .logo a::after{
-    content: "";
-    position: absolute;
-    width: 50%;
-    height: 50px;
-    border-top: 10px solid rgb(var(--skin-color));
-    border-right: 1px solid rgb(var(--skin-color));
-    border-top-right-radius: 100%;
-    top: -24px;
-    right: -30px;
-
-}
-
 
 .shadow{
     box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
-/* =========================== Home section ================================ */
+
 .section{
+    display: flex;
     background-color: var(--bg-black-900);
     min-height: 100vh;
     padding: 0 30px;
@@ -264,9 +83,7 @@ li .fa{
     max-width: 1100px;
     width: 100%;
     margin: auto ;
-    /* background-color: #fff;
     border-radius: 15px;
-    box-shadow: 0px 0px 5px 1px rgba(var(--skin-color), 0.3) */
 }
 
 .hidden{
@@ -282,15 +99,209 @@ li .fa{
     position: relative;
 }
 
+h1, h2, h3{
+    font-family: var(--header-font);
+}
+
+/* =============================== pre loading animation ============================ */
+#anime-ctr{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    z-index: 99;
+    
+}
+
+#anime{
+    width: 200px;
+    
+}
+
+/* =========================== side menu ================================ */
+
+/* nav bar overall structure */
+.side-menu{
+    width: 270px;
+    height: 100%;
+    position: fixed;
+
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: --bg-black-50;
+    border-right: 1px solid rgba(var(--skin-color), 0.2);
+    font-family: var(--header-font);
+
+}
+
+/* collapsed menue style */
+.nav-collapse{
+    width: 0.8in;
+    height: 100vh;
+}
+
+/* removing labels for callpsed menue */
+.nav-collapse .nav span{
+    display: none;
+}
+
+/* nav bar list item (menu item) */
+.side-menu ul.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    list-style: none;
+    padding: 0px;
+    transition: all .4s ease-out;
+}
+
+/* nav text style and hover */
+.side-menu ul.nav li a{
+    color: var(--text-black-700);
+    transition: all .4s ease;
+}
+
+.side-menu ul.nav li,
+.nav-toggler{
+    cursor: pointer;
+    padding: 8px 15px;
+    transition: all .4s ease;
+    border-bottom: 1px solid var(--bg-black-50);
+
+}
+
+.side-menu ul.nav li:hover,
+.nav-toggler:hover{
+    transform: rotate(-5deg);
+    background-color: rgba(var(--skin-color),.7);
+    border-radius: 5px;
+}
+.side-menu ul.nav li:hover a,
+.nav-toggler:hover i{
+    color: var(--bg-black-900)
+}
+
+/* side menue toggle botton */
+.nav-toggler{
+    position: absolute;
+    top: 93%;
+    left: 75%;    
+}
+
+/* style for collapsed menu toggle button */
+.nav-collapse .nav-toggler{
+    left: initial;
+}
+
+
+/* active menu is different color */
+.side-menu .nav li .active{
+    color: rgb(var(--skin-color));
+}
+
+
+/* logo style for expanded menu*/
+.logo a{
+    color: var(--text-black-700);
+}
+
+.logo span{
+    font-family: var(--header-font);
+}
+
+.un-collapsed-logo{
+    position: absolute;
+    top: 80px;
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    transition: all .4s ease;
+}
+
+/* adding some style to the logo */
+.un-collapsed-logo a::before{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 40px;
+    border-bottom-left-radius: 100%;
+    border-bottom: 10px solid rgb(var(--skin-color));
+    border-left: 1px solid rgb(var(--skin-color));
+    bottom: -25px;
+    left: -20px;
+
+}
+.un-collapsed-logo a::after{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 50px;
+    border-top: 10px solid rgb(var(--skin-color));
+    border-right: 1px solid rgb(var(--skin-color));
+    border-top-right-radius: 100%;
+    top: -24px;
+    right: -30px;
+}
+
+/* animation on logo hover for expaned menue */
+.un-collapsed-logo:hover{
+    transform: rotate(-5deg);
+}
+
+.un-collapsed-logo:hover a{
+    color: rgb(var(--skin-color));
+
+}
+
+.un-collapsed-logo:hover a::after,
+.un-collapsed-logo:hover a::before{
+    border-color: var(--text-black-700);
+}
+
+
+/* collapsed menu style */
+.nav-collapse .logo{
+    display: box;
+    position: absolute;
+    bottom: 88%;
+    font-size: var(--h1-font-size);
+    transform: rotate(270deg);
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+
+/* collapse menu hover animition */
+.nav-collapse .logo:hover a{
+    color: var(--bg-black-900);
+}
+
+.nav-collapse .logo:hover{
+    background-color: rgb(var(--skin-color));
+    transform: rotate(280deg);
+}
+
+/* =========================== Home section ================================ */
+
 .home
 .about{
     min-height: 100vh;
-    display: flex;
     color: var(--text -black-900);
+    
 } 
+
 
 .home .home-info,
 .about .about-info{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
     flex: 0 0 60%;
     max-width: 60%;
 }
@@ -301,31 +312,17 @@ li .fa{
     max-width: 40%;
     text-align: center ;
     position: relative;
-}
-.home .home-img::before{
-    content: "";
-    position: absolute;
-    height: 50px;
-    width: 150px;
-    border-top: 10px solid rgb(var(--skin-color));
-    border-left: 15px solid rgb(var(--skin-color));
-    left: 30px;
-    top: -20px;
+
+    background-image: url('data:image/svg+xml;utf8,<svg id="10015.io" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" ><path fill="rgba(57, 57, 57, 0.41)" d="M392.5,326.5Q340,413,242.5,408.5Q145,404,120,322Q95,240,113,145Q131,50,234.5,60Q338,70,391.5,155Q445,240,392.5,326.5Z" /></svg>');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size:550px;
 }
 
-.home .home-img::after{
-    content: "";
-    position: absolute;
-    height: 150px;
-    width: 50px;
-    border-bottom: 10px solid rgb(var(--skin-color));
-    border-right: 15px solid rgb(var(--skin-color));
-    right: 50px;
-    bottom: -50px;
-}
 
-.home .home-img img
-.about .about-img{
+.home .home-img img,
+.about .about-img img{
+    background-origin: content-box;
     height: 400px;
 }
 
@@ -550,4 +547,109 @@ a.btn{
 .service-item p{
     color: var(--text-black-700);
 
+}
+
+/* =========================== Contact section ================================ */
+
+
+
+
+
+
+
+/* ========================= Responsiveness ================================ */
+@media (max-width:1199px) {
+    .side-menu{
+        display: none;
+    }
+
+    .section{
+        padding-left: 0;
+    }
+}
+
+
+.style-switcher{
+    position: fixed;
+    right: 0;
+    top: 60px;
+
+    width: 200px;
+    padding: 15px;
+    border: 1px solid var(--bg-black-50);
+    background-color: var(--bg-black-100);
+    z-index: 101;
+    border-radius: 10px;
+    transition: all .3s ease;
+
+    transform: translateX(100%);
+}
+
+.style-switcher.open{
+    transform: translateX(-25px);
+}
+
+.style-switcher .s-icon{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+
+    text-align: center;
+    font-size: 20px;
+    background-color: var(--bg-black-100);
+    color: var(--text-black-900);
+    right: 100%;
+    top: 5px;
+
+
+    border: 1px solid var(--bg-black-50);
+    margin-right: 25px;
+    cursor: pointer;
+
+    border-radius: 50%;
+    transition: all .3s ease;
+    
+}
+
+.style-switcher .s-icon i{
+    line-height: 35px;
+}
+
+.style-switcher .day-night{
+    top: 50px;
+}
+
+.style-switcher .colors{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between ;
+}
+
+.style-switcher .colors span{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+
+    border: 2px solid rgb(var(--skin-color));
+    border-radius: 50%;
+}
+
+.style-switcher .colors .color1{
+    background-color: rgb(236, 24, 57);
+}
+
+.style-switcher .colors .color2{
+    background-color: rgb(250, 89, 15);
+}
+
+.style-switcher .colors .color3{
+    background-color: rgb(55, 177, 130);
+}
+
+.style-switcher .colors .color4{
+    background-color: rgb(24, 84, 180);
+}
+
+.style-switcher .colors .color5{
+    background-color: rgb(250, 215, 38);
 }

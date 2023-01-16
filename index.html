@@ -14,66 +14,69 @@
     <!-- Custom style sheet -->
     <link rel="stylesheet" href="./css/normalizer.css">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/themes/theme.css">
 
-    <!-- font awesome -->
+    <!-- Color Themes -->
+    <link rel="stylesheet" class= "alternate-color" href="./css/themes/color1.css" title= "color1">
+    <link rel="stylesheet" class= "alternate-color" href="./css/themes/color2.css" title= "color2" disabled>
+    <link rel="stylesheet" class= "alternate-color" href="./css/themes/color3.css" title= "color3" disabled>
+    <link rel="stylesheet" class= "alternate-color" href="./css/themes/color4.css" title= "color4" disabled>
+    <link rel="stylesheet" class= "alternate-color" href="./css/themes/color5.css" title= "color5" disabled>
+
+    <!-- font awesome linking -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
 
+    <!-- Title of the page -->
     <title>Samiulhaq Chardiwall</title>
 </head>
 
 
 <!-- ================================ Body ===================== -->
-<body>
+<body >
 
     <!-- ================== pre-loader section ================= -->
     <section id="pre-loader-ctr">
-        <div id="pre-loader-bg"></div>
-
         <div id="anime-ctr">
             <div id="anime"></div>
         </div>
     </section>
 
 
-    <!-- ============== main home page complete section ========= -->
-    <main id="pages">
+    <!-- ============== main page that navigates through sections ========= -->
+    <main class="body-container">
 
-        <!-- ================= Side bar ========================= -->
-        <aside class="side-menu">
+        <!-- ================= Side menu ========================= -->
+        <aside class="side-menu nav-collapse">
             <!-- logo -->
             <div class="logo">
                 <a href="#"><span>chardiwall</span></a>
             </div>
-            <div class="nav-toggler">
-                <span></span>
-            </div>
+            <div class="nav-toggler"><i class="fa-solid fa-bars fa-2xl"></i></div>
 
             <!-- navbar -->
             <ul class="nav">
-                <li><a href="#" class="active"><i class="fa fa-home"></i>Home</a></li>
-                <li><a href="#"><i class="fa fa-user"></i>About</a></li>
-                <li><a href="#"><i class="fa fa-newspaper"></i>Articles</a></li>
-                <li><a href="#"><i class="fa fa-list"></i>Services</a></li>
-                <li><a href="#"><i class="fa fa-comment"></i>Contact</a></li>
+                <li><a href="#" class="active"><i class="fa fa-home fa-xl"></i><span>Home</span></a></li>
+                <li><a href="#"><i class="fa fa-user fa-xl"></i><span>About</span></a></li>
+                <li><a href="#"><i class="fa fa-newspaper fa-xl"></i><span>Articles</span></a></li>
+                <li><a href="#"><i class="fa fa-list fa-xl"></i><span>Services</span></a></li>
+                <li><a href="#"><i class="fa fa-comment fa-xl"></i><span>Contact</span></a></li>
             </ul>
             
 
         </aside>
 
         <!-- ================ Home Section ============================== -->
-        <section class="main-content home section hidden">
-            <div class="container">
+        <section class="main-content home section">
+            <div class="container shadow">
                 <div class="row">
                     <div class="home-info padd-15">
                         <h3 class="hello">Hello, My Name Is <span class="name">Samiulhaq Chardiwall</span></h3>
-                        <h3 class="profession">I'm a <span class="typing">Machine Learning Engineer</span></h3>
+                        <h3 class="profession">I'm a <span class="typing"></span></h3>
                         <p>I am a machine learning engineer with extensive experiance. My expertise is to create statistical models ready for deployment.</p>
                         <a href="#" class="btn hire-me"><span>Let's<br>&nbsp&nbsp&nbsp&nbsp&nbspTalk</span></a>
                     </div>
 
-                    <div class="home-img padd-15">
+                    <div class="home-img">
                         <img src="./Thumbnail/hero-img.png" alt="Samiulhaq Chardiwall" srcset="">
                     </div>
                 </div>
@@ -257,7 +260,7 @@
         
         <!-- =============== Services Section ================== -->
 
-        <section class="service section">
+        <section class="service section hidden">
             <div class="container">
                 <div class="row">
                     <div class="section-title padd-15">
@@ -323,8 +326,26 @@
 
 
 
-        <!-- ================ Footer ============================ -->
+        <!-- ================ style switcher ============================ -->
+        <div class="style-switcher">
+            <div class="style-switcher-toggler s-icon">
+                <i class="fas fa-cog"></i>
+            </div>
 
+            <div class="day-night  s-icon">
+                <i class="fas"></i>
+            </div>
+
+            <h4>Themes</h4>
+            <div class="colors">
+                <span class="color1" onclick="setActivityStyle('color1')"></span>
+                <span class="color2" onclick="setActivityStyle('color2')"></span>
+                <span class="color3" onclick="setActivityStyle('color3')"></span>
+                <span class="color4" onclick="setActivityStyle('color4')"></span>
+                <span class="color5" onclick="setActivityStyle('color5')"></span>
+            </div>
+
+    </div>
     </main>
 
 
@@ -332,6 +353,7 @@
 
     <!-- =================== JavaScript =======================  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.1/lottie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.js "></script>
     <script src="./JavaScript/script.js"></script>
 </body>
 </html>
