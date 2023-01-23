@@ -18,7 +18,7 @@ let loader_ctr = document.getElementById("pre-loader-ctr");
 
 addEventListener("load", function(){
     loader_ctr.style.display= "none";
-    loader_ctr.animate(1);
+    loader_ctr.animate();
 })
 
 // ------------- nav toggler function --------
@@ -27,14 +27,17 @@ navToggler.addEventListener("click", ()=>{
     document.querySelector('.side-menu').classList.toggle('nav-collapse');
     document.querySelector('.logo').classList.toggle('un-collapsed-logo');
     
-    if(document.querySelector('.side-menu').classList.contains('nav-collapse')){
-        document.querySelector('.section').style.paddingLeft="0"
-        document.querySelector('.section').style.paddingRight="0"
-    }
-    else{
-        document.querySelector('.section').style.paddingLeft="270px"
-    }
+    // if(document.querySelector('.side-menu').classList.contains('nav-collapse')){
+    //     document.querySelector('.section').style.paddingLeft="1in"
+    //     document.querySelector('.section').style.paddingRight="0"
+    // }
+    // else{
+    //     document.querySelector('.section').style.paddingLeft="270px"
+    // }
 
+    document.getElementById('nav-toggler-icon').classList.toggle('fa-caret-left')
+
+    document.getElementById('nav-toggler-icon').classList.toggle('fa-caret-right')
     
 })
 
@@ -47,6 +50,19 @@ var typing = new Typed('.typing',{
 })
 
 
+// ----------- Cursor customization ------------
+var cursor_ = document.querySelector('.cursor');
+document.addEventListener('mousemove', e =>{
+    cursor_.setAttribute('style', 'top: '+(e.pageY-18)+'px; left: '+(e.pageX-18)+'px;' )
+})
+
+document.addEventListener('click', ()=>{
+    cursor_.classList.add('expand')
+
+    setTimeout(()=>{
+        cursor_.classList.remove('expand')
+    }, 500)
+})
 
 // theme
 const styleSwitcerTggler= document.querySelector('.style-switcher-toggler');

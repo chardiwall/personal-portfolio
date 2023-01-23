@@ -16,11 +16,12 @@
     <link rel="stylesheet" href="./css/style.css">
 
     <!-- Color Themes -->
-    <link rel="stylesheet" class= "alternate-color" href="./css/themes/color1.css" title= "color1">
-    <link rel="stylesheet" class= "alternate-color" href="./css/themes/color2.css" title= "color2" disabled>
+    <link rel="stylesheet" class= "alternate-color" href="./css/themes/color1.css" title= "color1" disabled>
+    <link rel="stylesheet" class= "alternate-color" href="./css/themes/color2.css" title= "color2">
     <link rel="stylesheet" class= "alternate-color" href="./css/themes/color3.css" title= "color3" disabled>
     <link rel="stylesheet" class= "alternate-color" href="./css/themes/color4.css" title= "color4" disabled>
     <link rel="stylesheet" class= "alternate-color" href="./css/themes/color5.css" title= "color5" disabled>
+    <link rel="stylesheet" class= "alternate-color" href="./css/themes/color6.css" title= "color6" disabled>
 
     <!-- font awesome linking -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
@@ -34,13 +35,16 @@
 <!-- ================================ Body ===================== -->
 <body >
 
+    <!-- custom cursor -->
+    <div class="cursor"></div>
+
+
     <!-- ================== pre-loader section ================= -->
     <section id="pre-loader-ctr">
         <div id="anime-ctr">
             <div id="anime"></div>
         </div>
     </section>
-
 
     <!-- ============== main page that navigates through sections ========= -->
     <main class="body-container">
@@ -51,7 +55,7 @@
             <div class="logo">
                 <a href="#"><span>chardiwall</span></a>
             </div>
-            <div class="nav-toggler"><i class="fa-solid fa-bars fa-2xl"></i></div>
+            <div class="nav-toggler"><i id='nav-toggler-icon' class="fa-solid fa-caret-right fa-2xl"></i></div>
 
             <!-- navbar -->
             <ul class="nav">
@@ -343,6 +347,7 @@
                 <span class="color3" onclick="setActivityStyle('color3')"></span>
                 <span class="color4" onclick="setActivityStyle('color4')"></span>
                 <span class="color5" onclick="setActivityStyle('color5')"></span>
+                <span class="color6" onclick="setActivityStyle('color6')"></span>
             </div>
 
     </div>
