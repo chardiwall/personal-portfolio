@@ -180,7 +180,8 @@ p, h3, h4, .fa-solid{
 }
 
 /* nav text style and hover */
-.side-menu ul.nav li a{
+.side-menu ul.nav li a,
+ul.social li a{
     color: var(--text-black-700);
     transition: all .4s ease;
 }
@@ -190,7 +191,8 @@ p, h3, h4, .fa-solid{
 }
 
 .side-menu ul.nav li,
-.nav-toggler{
+.nav-toggler,
+ul.social li{
     cursor: pointer;
     padding: 8px 15px;
     transition: all .4s ease;
@@ -199,13 +201,15 @@ p, h3, h4, .fa-solid{
 }
 
 .side-menu ul.nav li:hover,
-.nav-toggler:hover{
+.nav-toggler:hover,
+.social li:hover{
     transform: rotate(-5deg);
     background-color: rgba(var(--skin-color),.7);
     border-radius: 5px;
 }
 .side-menu ul.nav li:hover a,
-.nav-toggler:hover i{
+.nav-toggler:hover i,
+.social li:hover a{
     color: var(--bg-black-900)
 }
 
@@ -309,6 +313,20 @@ p, h3, h4, .fa-solid{
 }
 
 /* =========================== Home section ================================ */
+
+.social{
+    margin-top: -50px;
+    margin-bottom: 50px;
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    justify-content: center;
+    transition: all .4s ease-out;
+}
+
+.social li{
+    z-index: 100;
+}
 
 .home
 .about{
@@ -769,5 +787,9 @@ a.btn{
 
     .style-switcher{
         left: 20%;
+    }
+
+    ul.social span{
+        display: none;
     }
 }
