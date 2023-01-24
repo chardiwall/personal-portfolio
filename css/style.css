@@ -15,6 +15,7 @@
     --bg-black-900: #f2f2fc;
     --bg-black-100: #fdf9ff;
     --bg-black-50: #e8dfec;
+    --bg-black-75: #b6b5b7;
     --text-black-900: #302e4d;
     --text-black-700: #504e70;
 
@@ -37,6 +38,7 @@ body.dark{
         --bg-black-900: rgb(23, 25, 42);
         --bg-black-100: #222222;
         --bg-black-50: #393939;
+        --bg-black-75: #717070;
         
         --text-black-900: #fff;
         --text-black-700: #d3d3d3;
@@ -91,6 +93,7 @@ body{
     width: 100%;
     margin: auto ;
     border-radius: 15px;
+    background-color: rgba(var(--skin-color), .09);
 }
 
 .hidden{
@@ -148,11 +151,11 @@ p, h3, h4, .fa-solid{
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    background-color: --bg-black-50;
     border-right: 1px solid rgba(var(--skin-color), 0.2);
+    background-color: rgba(var(--skin-color), .09);
     font-family: var(--header-font);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
     overflow-y: scroll;
     z-index: 99;
 
@@ -256,9 +259,8 @@ ul.social li{
     position: absolute;
     width: 50%;
     height: 40px;
-    border-bottom-left-radius: 100%;
-    border-bottom: 10px solid rgb(var(--skin-color));
-    border-left: 1px solid rgb(var(--skin-color));
+    border-bottom: 8px solid rgb(var(--skin-color));
+    border-left: 4px solid rgb(var(--skin-color));
     bottom: -25px;
     left: -20px;
 
@@ -268,9 +270,8 @@ ul.social li{
     position: absolute;
     width: 50%;
     height: 50px;
-    border-top: 10px solid rgb(var(--skin-color));
-    border-right: 1px solid rgb(var(--skin-color));
-    border-top-right-radius: 100%;
+    border-top: 8px solid rgb(var(--skin-color));
+    border-right: 4px solid rgb(var(--skin-color));
     top: -24px;
     right: -30px;
 }
