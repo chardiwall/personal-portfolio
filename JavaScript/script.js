@@ -19,6 +19,7 @@ let loader_ctr = document.getElementById("pre-loader-ctr");
 addEventListener("load", function(){
     loader_ctr.style.display= "none";
     loader_ctr.animate();
+    document.getElementById('body-container').style.display="relative"
 })
 
 // ------------- nav toggler function --------
